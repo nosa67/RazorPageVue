@@ -1,0 +1,55 @@
+﻿@page
+@model CheckButtonModel
+@{
+    ViewData["Title"] = "RadioButton Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueCheckButtons.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタンチェック</h1>
+
+        <div class="content box">
+            <label>通常のチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.NormalCheckList' asp-items='@Model.CheckValues' selectedclass="selected-check-item" notselectedclass="check-item "></vue-check-buttons>
+        </div>
+
+        <div class="content box">
+            <label>必須のチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.RequiredCheckList' asp-items='@Model.CheckValues' selectedclass="selected-check-item" notselectedclass="check-item "></vue-check-buttons>
+        </div>
+
+        <div class="content box">
+            <label>必須でエラーメッセージ変更のチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.RequiredErrChangeList' asp-items='@Model.CheckValues' selectedclass="selected-check-item" notselectedclass="check-item "></vue-check-buttons>
+        </div>
+
+        <div class="content box">
+            <label>Enumのチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.NormalEnumList' selectedclass="selected-check-item" notselectedclass="check-item"></vue-check-buttons>
+        </div>
+
+        <div class="content box">
+            <label>必須のEnumのチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.RequiredEnumList' selectedclass="selected-check-item" notselectedclass="check-item"></vue-check-buttons>
+        </div>
+
+        <div class="content box">
+            <label>必須でエラーメッセージ変更のEnumのチェックボックス</label>
+            <vue-check-buttons asp-for='@Model.BindData.RequiredErrChangeEnumList' selectedclass="selected-check-item" notselectedclass="check-item"></vue-check-buttons>
+        </div>
+
+        <input id="mainsubmit" type="submit" />
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+</form>
+
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

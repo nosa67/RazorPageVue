@@ -1,0 +1,126 @@
+﻿@page
+@model RazorPageVue.Pages.RealInputResultModel
+@{
+    ViewData["Title"] = "TextInput Check Result";
+}
+@addTagHelper *,RazorPageVue
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタン選択結果</h1>
+
+        <div class="content box">
+            <label>設定なし</label><br />
+            <span id="Nochek">@Model.Nochek</span>
+        </div>
+        <div class="content box">
+            <label>required</label><br />
+            <span id="Required">@Model.Required</span>
+        </div>
+        <div class="content box">
+            <label>required エラーメッセージ変更</label><br />
+            <span id="RequiredErrch">@Model.RequiredErrch</span>
+        </div>
+
+        <div class="content box">
+            <label>min=-1.5</label><br />
+            <span id="MinM1_5">@Model.MinM1_5</span>
+        </div>
+        <div class="content box">
+            <label>min=-2.5 メッセージ変更</label><br />
+            <span id="MinM1_5Errch">@Model.MinM1_5Errch</span>
+        </div>
+        <div class="content box">
+            <label>min=0</label><br />
+            <span id="Min0">@Model.Min0</span>
+        </div>
+        <div class="content box">
+            <label>min=3.2</label><br />
+            <span id="Min1_2">@Model.Min1_2</span>
+        </div>
+
+        <div class="content box">
+            <label>max=5</label><br />
+            <span id="Max1_5">@Model.Max1_5</span>
+        </div>
+        <div class="content box">
+            <label>max=5 メッセージ変更</label><br />
+            <span id="Max1_5Errch">@Model.Max1_5Errch</span>
+        </div>
+        <div class="content box">
+            <label>max=0</label><br />
+            <span id="Max0">@Model.Max0</span>
+        </div>
+        <div class="content box">
+            <label>max=-2</label><br />
+            <span id="MaxM1_2">@Model.MaxM1_2</span>
+        </div>
+
+        <div class="content box">
+            <label>step=2</label><br />
+            <span id="Step0_2">@Model.Step0_2</span>
+        </div>
+        <div class="content box">
+            <label>step=2 メッセージ変更</label><br />
+            <span id="Step0_2Errch">@Model.Step0_2Errch</span>
+        </div>
+        <div class="content box">
+            <label>step=3</label><br />
+            <span id="Step0_3">@Model.Step0_3</span>
+        </div>
+
+        <div class="content box">
+            <label>min=-10 max=-5</label><br />
+            <span id="MinM1_0MaxM0_5">@Model.MinM1_0MaxM0_5</span>
+        </div>
+        <div class="content box">
+            <label>min=-5 max=0</label><br />
+            <span id="MinM0_5Max0">@Model.MinM0_5Max0</span>
+        </div>
+        <div class="content box">
+            <label>min=-5 max=5</label><br />
+            <span id="MinM0_5Max0_5">@Model.MinM0_5Max0_5</span>
+        </div>
+        <div class="content box">
+            <label>min=0 max=5</label><br />
+            <span id="Min0Max0_5">@Model.Min0Max0_5</span>
+        </div>
+        <div class="content box">
+            <label>min=5 max=10</label><br />
+            <span id="Min0_5Max1_0">@Model.Min0_5Max1_0</span>
+        </div>
+
+        <div class="content box">
+            <label>min=-5 step=3</label><br />
+            <span id="MinM1_5Step0_3">@Model.MinM1_5Step0_3</span>
+        </div>
+        <div class="content box">
+            <label>min=0 step=3</label><br />
+            <span id="Min0Step0_3">@Model.Min0Step0_3</span>
+        </div>
+        <div class="content box">
+            <label>min=2 step=3</label><br />
+            <span id="Min1_2Step0_3">@Model.Min1_2Step0_3</span>
+        </div>
+
+        <div class="content box">
+            <label>max=5 step=2</label><br />
+            <span id="Max0_5Step0_2">@Model.Max0_5Step0_2</span>
+        </div>
+        <div class="content box">
+            <label>max=0 step=3</label><br />
+            <span id="Max0Step0_3">@Model.Max0Step0_3</span>
+        </div>
+        <div class="content box">
+            <label>max=-2 step=4</label><br />
+            <span id="MaxM1_2Step0_4">@Model.MaxM1_2Step0_4</span>
+        </div>
+
+        <div class="content box">
+            <label>min=-5 max=5 step=3</label><br />
+            <span id="MinM0_5Step0_3Max0_5">@Model.MinM0_5Step0_3Max0_5</span>
+        </div>
+
+        <a id="returnLink" href="~/TextInput">戻る</a>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+﻿@page
+@model RazorPageVue.Pages.TimeInputModel
+@{
+    ViewData["Title"] = "IntegerInput Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueTimeInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">整数入力チェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>基本</label><br />
+            <span style="display:inline-block">
+                <label>設定なし</label><br />
+                <vue-time-input asp-for="@Model.BindData.NormalTimeSpan"></vue-time-input>
+            </span>
+            <span style="display:inline-block">
+                <label>必須</label><br />
+                <vue-time-input asp-for="@Model.BindData.RequiredTimeSpan" required></vue-time-input>
+            </span>
+            <span style="display:inline-block">
+                <label>必須メッセージ変更</label><br />
+                <vue-time-input asp-for="@Model.BindData.RequiredTimeSpanChange" required></vue-time-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小チェック</label><br />
+            <span style="display:inline-block">
+                <label>最小「1:10」MinTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.MinTimeSpan"></vue-time-input>
+            </span>
+            <span style="display:inline-block">
+                <label>最小「1:15」エラー変更MinErrTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.MinErrTimeSpan"></vue-time-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大チェック</label><br />
+            <span style="display:inline-block">
+                <label>最大「23:10」MaxTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.MaxTimeSpan"></vue-time-input>
+            </span>
+            <span style="display:inline-block">
+                <label>最大「22:55」エラー変更MaxErrTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.MaxErrTimeSpan"></vue-time-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>ステップチェック</label><br />
+            <span style="display:inline-block">
+                <label>ステップ：300(秒)StepTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.StepTimeSpan"></vue-time-input>
+            </span>
+            <span style="display:inline-block">
+                <label>ステップ：300(秒)エラー変更StepErrTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.StepErrTimeSpan"></vue-time-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小最大ステップチェック</label><br />
+            <span style="display:inline-block">
+                <label>最小「2:00"」最大「22:22」ステップ：900(秒)MinMaxStepTimeSpan</label><br />
+                <vue-time-input asp-for="@Model.BindData.MinMaxStepTimeSpan"></vue-time-input>
+            </span>
+        </div>
+
+        
+        <input id="mainsubmit" type="submit" />
+
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

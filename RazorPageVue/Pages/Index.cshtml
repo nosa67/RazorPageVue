@@ -1,0 +1,104 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueRadioButtons.js" asp-append-version="true"></script>
+<script src="~/compornents/vueCheckButtons.js" asp-append-version="true"></script>
+<script src="~/compornents/vueTextInput.js" asp-append-version="true"></script>
+<script src="~/compornents/vueIntegerInput.js" asp-append-version="true"></script>
+<script src="~/compornents/vueRealInput.js" asp-append-version="true"></script>
+<script src="~/compornents/vueTimeInput.js" asp-append-version="true"></script>
+
+<script>
+    // 【テスト用】実施中のエレメントの属性をアラート表示する（多いと大変なので修正が必要）
+    function checkValues() {
+        var findUl = document.getElementById('components-demo');
+
+        showElementAttrs(findUl);
+    }
+
+    function showElementAttrs(parentEl) {
+
+
+        var findLi = parentEl.children;
+
+        for (var i = 0; i < findLi.length; i++) {
+            var attrs = "";
+            var attrList = findLi[i].attributes
+            for (var j = 0; j < attrList.length; j++) {
+                attrs += attrList[j].name + ":" + attrList[j].value + ",";
+            }
+            //alert(findLi[i].tagName + " => " + attrs);
+
+            showElementAttrs(findLi[i]);
+        }
+    }
+</script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">各種コンポーネント</h1>
+        <div class="content box">
+            <a href="~/RadioButton">ラジオボタン</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/CheckButton">チェックボタン</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/TextInput">文字入力</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/IntegerInput">整数入力</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/RealInput">実数入力</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/TimeInput">時間入力</a>
+        </div>
+
+        <div class="content box">
+            <a href="~/DateInput">日付入力</a>
+        </div>
+
+        <div class="content box">
+            <label>intput type=date</label>
+            <input type="date">
+        </div>
+
+        <div class="content box">
+            <label>intput type=month</label>
+            <input type="month">
+        </div>
+
+        <div class="content box">
+            <label>intput type=range</label>
+            <input type="range">
+        </div>
+
+        <div class="content box">
+            <label>intput type=color</label>
+            <input type="color">
+        </div>
+
+        <input id="mainsubmit" type="submit" />
+        <button onclick="checkValues(); return false;">確認</button>
+    </div>
+</form>
+
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+    //new Vue({ el: '#components-demo' });
+</script>

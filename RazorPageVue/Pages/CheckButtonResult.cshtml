@@ -1,0 +1,44 @@
+﻿@page
+@model RazorPageVue.Pages.CheckButtonResultModel
+@{
+    ViewData["Title"] = "RadioButton Check Result";
+}
+@addTagHelper *,RazorPageVue
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタン選択結果</h1>
+
+        <div class="content box">
+            <label>通常のチェックボックス</label>
+            選択ID：選択名 <span id="NormalCheckList">@Model.NormalCheckList</span>
+        </div>
+
+        <div class="content box">
+            <label>必須のチェックボックス</label>
+            選択ID：選択名 <span id="RequiredCheckList">@Model.RequiredCheckList</span>
+        </div>
+
+        <div class="content box">
+            <label>必須でエラーメッセージ変更のチェックボックス</label>
+            選択ID：選択名 <span id="RequiredErrChangeList">@Model.RequiredErrChangeList</span>
+        </div>
+
+        <div class="content box">
+            <label>Enumのチェックボックス</label>
+            選択列挙 <span id="NormalEnumList">@Model.NormalEnumList</span>
+        </div>
+
+        <div class="content box">
+            <label>必須のEnumのチェックボックス</label>
+            選択列挙 <span id="RequiredEnumList">@Model.RequiredEnumList</span>
+        </div>
+
+        <div class="content box">
+            <label>必須でエラーメッセージ変更のEnumのチェックボックス</label>
+            選択列挙 <span id="RequiredErrChangeEnumList">@Model.RequiredErrChangeEnumList</span>
+        </div>
+
+        <a id="returnLink" href="~/CheckButton">戻る</a>
+    </div>
+</form>

@@ -1,0 +1,56 @@
+﻿@page
+@model RadioButtonModel
+@{
+    ViewData["Title"] = "RadioButton Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueRadioButtons.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタンチェック</h1>
+
+        <div class="content box">
+            <label>通常のラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.RadioSelected' asp-items='@RadioButtonModel.RadioValues' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <div class="content box">
+            <label>入力必須のラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.RadioRequiredSelected' asp-items='@RadioButtonModel.RadioValues' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <div class="content box">
+            <label>入力必須(メッセージ変更)のラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.RadioRequiredSelectedErrChange' asp-items='@RadioButtonModel.RadioValues' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <div class="content box">
+            <label>Enumのラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.EnumRadioSelected' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <div class="content box">
+            <label>入力必須のEnumのラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.EnumRequiredRadioSelected' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <div class="content box">
+            <label>入力必須(メッセージ変更)のEnumのラジオボタン</label>
+            <vue-radio-buttons asp-for='@Model.BindData.EnumRequiredRadioSelectedErrChange' selectedclass="radio-item has-background-primary" notselectedclass="radio-item"></vue-radio-buttons>
+        </div>
+
+        <input id="mainsubmit" type="submit" />
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+
+</form>
+
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

@@ -1,0 +1,87 @@
+﻿@page
+@model RazorPageVue.Pages.VueRealInputSysErrModel
+@{
+    ViewData["Title"] = "IntegerInputSysErr Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueRealInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">整数システムチェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>正常系　範囲指定なし</label><br />
+            <span style="display:inline-block">
+                <label>Sbyte</label><br />
+                <vue-real-input asp-for="@Model.BindData.normalFloat"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Byte</label><br />
+                <vue-real-input asp-for="@Model.BindData.normalDouble"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>正常系　範囲指定有</label><br />
+            <span style="display:inline-block">
+                <label>Sbyte</label><br />
+                <vue-real-input asp-for="@Model.BindData.normalRangeFloat"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Byte</label><br />
+                <vue-real-input asp-for="@Model.BindData.normalRangeDouble"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　範囲が数値でない</label><br />
+            <span style="display:inline-block">
+                <label>Range属性で指定（エラーにならない）</label><br />
+                <vue-real-input asp-for="@Model.BindData.illegalRangeAttrFloat"></vue-real-input>
+            </span>
+            @*<span style="display:inline-block">
+                <label>タグプロパティーでの不整値　SByte</label><br />
+                <vue-real-input asp-for="@Model.BindData.illegalRangeFloat" min="a" max="b"></vue-real-input>
+            </span>*@
+            @*<span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Byte</label><br />
+                <vue-real-input asp-for="@Model.BindData.illegalRangeDouble" min="a" max="b"></vue-real-input>
+            </span>*@
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　最小値が範囲外</label><br />
+            @*<span style="display:inline-block">
+                <label>タグプロパティーでの不整値　SByte</label><br />
+                <vue-real-input asp-for="@Model.BindData.underRangeFloat"></vue-real-input>
+            </span>*@
+            @*<span style="display:inline-block">
+                これはデータがコンパイルエラーになる
+                <label>タグプロパティーでの不整値　Byte</label><br />
+                <vue-real-input asp-for="@Model.BindData.underRangeDouble"></vue-real-input>
+            </span>*@
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　最大値が範囲外</label><br />
+            @*<span style="display:inline-block">
+                <label>Sbyte</label><br />
+                <vue-real-input asp-for="@Model.BindData.overRangeFloat"></vue-real-input>
+            </span>*@
+            @*<span style="display:inline-block">
+                これはデータがコンパイルエラーになる
+                <label>Byte</label><br />
+                <vue-real-input asp-for="@Model.BindData.overRangeDouble"></vue-real-input>
+            </span>*@
+        </div>
+    </div>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

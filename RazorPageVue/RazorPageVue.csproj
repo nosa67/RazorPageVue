@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="vue" Version="2.6.10" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="TestCafe\VueRealInput.test.ts">
+      <SubType>Code</SubType>
+    </None>
+    <None Update="TestCafe\VueIntegerInput.test.ts">
+      <SubType>Code</SubType>
+    </None>
+    <None Update="TestCafe\VueTimeInput.test.ts">
+      <SubType>Code</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,168 @@
+﻿@page
+@model RazorPageVue.Pages.IntegerInputModel
+@{
+    ViewData["Title"] = "IntegerInput Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueIntegerInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">整数入力チェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>入力必須</label><br />
+            <span style="display:inline-block">
+                <label>設定なし</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Nochek" not-integer-err-msg="整数ではない（変更）"></vue-integer-input>
+                @*<input asp-for="@Model.BindData.Nochek">*@
+            </span>
+            <span style="display:inline-block">
+                <label>required</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Required"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required　Err変更</label><br />
+                <vue-integer-input asp-for="@Model.BindData.RequiredErrch"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値</label><br />
+            <span style="display:inline-block">
+                <label>min=-5</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-5　Err変更</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5Errch"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min0"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=2</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min2"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大値</label><br />
+            <span style="display:inline-block">
+                <label>max=5</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Max5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=5 Err変更</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Max5Errch"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=0</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Max0"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=-2</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MaxM2"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>ステップ</label><br />
+            <span style="display:inline-block">
+                <label>step=2</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Step2"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>step=2　Err変更</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Step2Errch"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>step=3 </label><br />
+                <vue-integer-input asp-for="@Model.BindData.Step3"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値、最大値</label><br />
+            <span style="display:inline-block">
+                <label>min=-10 max=-5</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM10MaxM5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-5 max=0</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5Max0"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-5 max=5</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5Max5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0 max=5</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min0Max5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=5 max=10</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min5Max10"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値＋ステップ</label><br />
+            <span style="display:inline-block">
+                <label>min=-5 step=3</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5Step3"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0 step=3</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min0Step3"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=2 step=3</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min2Step3"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大値+ステップ</label><br />
+            <span style="display:inline-block">
+                <label>max=5 step=2</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Max5Step2"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=0 Step=3</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Max0Step3"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=-2 Step=4</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MaxM2Step4"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値＋最大値+ステップ</label><br />
+            <span style="display:inline-block">
+                <label>min=-5 step=3 max="5"</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM5Step3Max5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-10 step=3 max="-5"</label><br />
+                <vue-integer-input asp-for="@Model.BindData.MinM10Step3MaxM5"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=5 step=3 max=10</label><br />
+                <vue-integer-input asp-for="@Model.BindData.Min5Step3Max10"></vue-integer-input>
+            </span>
+        </div>
+        <input id="mainsubmit" type="submit" />
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

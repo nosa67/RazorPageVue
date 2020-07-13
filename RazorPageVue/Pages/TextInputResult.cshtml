@@ -1,0 +1,71 @@
+﻿@page
+@model RazorPageVue.Pages.TextInputResultModel
+@{
+    ViewData["Title"] = "TextInput Check Result";
+}
+@addTagHelper *,RazorPageVue
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタン選択結果</h1>
+
+        <div class="content box">
+            <label>設定なし</label><br />
+            <span id="TextNocheck">@Model.TextNocheck</span>
+        </div>
+        <div class="content box">
+            <label>required</label><br />
+            <span id="TextRequired">@Model.TextRequired</span>
+        </div>
+        <div class="content box">
+            <label>required エラーメッセージ変更</label><br />
+            <span id="TextRequiredMsgChange">@Model.TextRequiredMsgChange</span>
+        </div>
+        <div class="content box">
+            <label>minlength=5</label><br />
+            <span id="TextMinLength">@Model.TextMinLength</span>
+        </div>
+        <div class="content box">
+            <label>minlength=5 メッセージ変更</label><br />
+            <span id="TextMinLengthMsg">@Model.TextMinLengthMsg</span>
+        </div>
+        <div class="content box">
+            <label>maxlength=10</label><br />
+            <span id="TextMaxLength">@Model.TextMaxLength</span>
+        </div>
+        <div class="content box">
+            <label>maxlength=10 メッセージ変更</label><br />
+            <span id="TextMaxLengthMsg">@Model.TextMaxLengthMsg</span>
+        </div>
+        <div class="content box">
+            <label>minlength=5 maxlength=10</label><br />
+            <span id="TextMinMaxLength">@Model.TextMinMaxLength</span>
+        </div>
+        <div class="content box">
+            <label>compare</label><br />
+            <span id="TextCompaire1">@Model.TextCompaire1</span> : <span id="TextCompaire2">@Model.TextCompaire2</span>
+        </div>
+        <div class="content box">
+            <label>compare メッセージ変更</label><br />
+            <span id="TextCompaireMsg1">@Model.TextCompaireMsg1</span> : <span id="TextCompaireMsg2">@Model.TextCompaireMsg2</span>
+        </div>
+        <div class="content box">
+            <label>url</label><br />
+            <span id="TextUrl">@Model.TextUrl</span>
+        </div>
+        <div class="content box">
+            <label>url メッセージ変更</label><br />
+            <span id="TextUrlMsg">@Model.TextUrlMsg</span>
+        </div>
+        <div class="content box">
+            <label>email</label><br />
+            <span id="TextEmail">@Model.TextEmail</span>
+        </div>
+        <div class="content box">
+            <label>email メッセージ変更</label><br />
+            <span id="TextEmailMsg">@Model.TextEmailMsg</span>
+        </div>
+
+        <a id="returnLink" href="~/TextInput">戻る</a>
+    </div>
+</form>

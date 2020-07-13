@@ -1,0 +1,39 @@
+﻿@page
+@model RazorPageVue.Pages.DateInputModel
+@{
+    ViewData["Title"] = "IntegerInput Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueDateInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">日付入力チェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>入力必須</label><br />
+            <span style="display:inline-block">
+                <label>設定なし</label><br />
+                <vue-date-input asp-for="@Model.BindData.Nochek"></vue-date-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required</label><br />
+                <vue-date-input asp-for="@Model.BindData.Required"></vue-date-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required　Err変更</label><br />
+                <vue-date-input asp-for="@Model.BindData.RequiredErrch"></vue-date-input>
+            </span>
+        </div>
+        <input id="mainsubmit" type="submit" />
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

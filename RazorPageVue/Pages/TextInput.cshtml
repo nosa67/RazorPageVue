@@ -1,0 +1,118 @@
+﻿@page
+@model RazorPageVue.Pages.TextInputModel
+@{
+    ViewData["Title"] = "TextInput Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueTextInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">テキスト入力チェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>入力必須チェック</label><br />
+            <span style="display:inline-block">
+                <label>設定なし</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextNocheck"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextRequired"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required エラーメッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextRequiredMsgChange"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小文字数チェック</label><br />
+            <span style="display:inline-block">
+                <label>minlength=5</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextMinLength"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>minlength=5 メッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextMinLengthMsg"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大文字数チェック</label><br />
+            <span style="display:inline-block">
+                <label>maxlength=10</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextMaxLength"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>maxlength=10 メッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextMaxLengthMsg"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小最大文字数チェック</label><br />
+            <span style="display:inline-block">
+                <label>minlength=5 maxlength=10</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextMinMaxLength"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>比較チェック</label><br />
+            <span style="display:inline-block">
+                <label>compare</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextCompaire1"></vue-text-input>
+                <vue-text-input asp-for="@Model.BindData.TextCompaire2"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>compare メッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextCompaireMsg1"></vue-text-input>
+                <vue-text-input asp-for="@Model.BindData.TextCompaireMsg2"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>非バインド</label><br />
+            <span style="display:inline-block">
+                <label>非バインド</label><br />
+                <vue-text-input name="NOBIND" value="nobinddata"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>URLチェック</label><br />
+            <span style="display:inline-block">
+                <label>URL</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextURL" name="NOBIND" value="nobinddata"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>URLメッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextURLMsg" name="NOBIND" value="nobinddata"></vue-text-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>Eメールチェック</label><br />
+            <span style="display:inline-block">
+                <label>E-Mail</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextEMail"></vue-text-input>
+            </span>
+            <span style="display:inline-block">
+                <label>E-Mailメッセージ変更</label><br />
+                <vue-text-input asp-for="@Model.BindData.TextEMailMsg"></vue-text-input>
+            </span>
+        </div>
+
+        <input id="mainsubmit" type="submit" />
+
+    </div>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

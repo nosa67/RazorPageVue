@@ -1,0 +1,160 @@
+﻿@page
+@model RazorPageVue.Pages.RealInputModel
+@{
+    ViewData["Title"] = "IntegerInput Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueRealInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">整数入力チェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>入力必須</label><br />
+            <span style="display:inline-block">
+                <label>設定なし</label><br />
+                <vue-real-input asp-for="@Model.BindData.Nochek"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required</label><br />
+                <vue-real-input asp-for="@Model.BindData.Required"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>required　Err変更</label><br />
+                <vue-real-input asp-for="@Model.BindData.RequiredErrch"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値</label><br />
+            <span style="display:inline-block">
+                <label>min=-1.5</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM1_5"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-1.5　Err変更</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM1_5Errch"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min0"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=1.2</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min1_2"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大値</label><br />
+            <span style="display:inline-block">
+                <label>max=1.5</label><br />
+                <vue-real-input asp-for="@Model.BindData.Max1_5"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=1.5 Err変更</label><br />
+                <vue-real-input asp-for="@Model.BindData.Max1_5Errch"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=0</label><br />
+                <vue-real-input asp-for="@Model.BindData.Max0"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=-1.2</label><br />
+                <vue-real-input asp-for="@Model.BindData.MaxM1_2"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>ステップ</label><br />
+            <span style="display:inline-block">
+                <label>step=0.2</label><br />
+                <vue-real-input asp-for="@Model.BindData.Step0_2"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>step=0.2　Err変更</label><br />
+                <vue-real-input asp-for="@Model.BindData.Step0_2Errch"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>step=0.3 </label><br />
+                <vue-real-input asp-for="@Model.BindData.Step0_3"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値、最大値</label><br />
+            <span style="display:inline-block">
+                <label>min=-1.0 max=-0.5</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM1_0MaxM0_5"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-0.5 max=0</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM0_5Max0"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=-0.5 max=0.5</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM0_5Max0_5"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0 max=0.5</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min0Max0_5"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0.5 max=1.0</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min0_5Max1_0"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値＋ステップ</label><br />
+            <span style="display:inline-block">
+                <label>min=-1.5 step=0.3</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM1_5Step0_3"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=0 step=.33</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min0Step0_3"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>min=1.2 step=0.3</label><br />
+                <vue-real-input asp-for="@Model.BindData.Min1_2Step0_3"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最大値+ステップ</label><br />
+            <span style="display:inline-block">
+                <label>max=0.5 step=0.2</label><br />
+                <vue-real-input asp-for="@Model.BindData.Max0_5Step0_2"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=0 Step=0.3</label><br />
+                <vue-real-input asp-for="@Model.BindData.Max0Step0_3"></vue-real-input>
+            </span>
+            <span style="display:inline-block">
+                <label>max=-1.2 Step=0.4</label><br />
+                <vue-real-input asp-for="@Model.BindData.MaxM1_2Step0_4"></vue-real-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>最小値＋最大値+ステップ</label><br />
+            <span style="display:inline-block">
+                <label>min=-0.5 step=0.3 max="0.5"</label><br />
+                <vue-real-input asp-for="@Model.BindData.MinM0_5Step0_3Max0_5"></vue-real-input>
+            </span>
+        </div>
+        <input id="mainsubmit" type="submit" />
+
+    </div>
+    <a id="returnLink" href="~/">戻る</a>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

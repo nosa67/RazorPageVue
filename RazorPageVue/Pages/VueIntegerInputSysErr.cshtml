@@ -1,0 +1,205 @@
+﻿@page
+@model RazorPageVue.Pages.VueIntegerInputSysErrModel
+@{
+    ViewData["Title"] = "IntegerInputSysErr Check";
+}
+@addTagHelper *,RazorPageVue
+
+@*利用するVueコンポーネントをここで取り込む*@
+<script src="~/js/vueUtil.js" asp-append-version="true"></script>
+<script src="~/compornents/vueIntegerInput.js" asp-append-version="true"></script>
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">整数システムチェック</h1>
+
+        <div id="mainDiv" class="content box">
+            <label>正常系　範囲指定なし</label><br />
+            <span style="display:inline-block">
+                <label>Sbyte</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalSbyte"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Byte</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalByte"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Short</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalShort"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Ushort</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalUshort"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Int</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalInt"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Uint</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalUint"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Long</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalLong"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Ulong</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalUlong"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>正常系　範囲指定有</label><br />
+            <span style="display:inline-block">
+                <label>Sbyte</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeSbyte"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Byte</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeByte"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Short</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeShort"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Ushort</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeUshort"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Int</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeInt"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Uint</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeUint"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Long</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeLong"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>Ulong</label><br />
+                <vue-integer-input asp-for="@Model.BindData.normalRangeUlong"></vue-integer-input>
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　範囲が数値でない</label><br />
+            <span style="display:inline-block">
+                <label>Range属性で指定（エラーにならない）</label><br />
+                <vue-integer-input asp-for="@Model.BindData.illegalRangeAttrSbyte"></vue-integer-input>
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　SByte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeSbyte" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Byte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeByte" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Short</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeShort" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Ushort</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeUshort" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Int</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeInt" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Uint</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeUint" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Long</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeLong" min="a" max="b"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Ulong</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.illegalRangeUlong" min="a" max="b"></vue-integer-input>*@
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　最小値が範囲外</label><br />
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　SByte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeSbyte"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Byte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeByte"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Short</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeShort"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Ushort</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeUshort"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Int</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeInt"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Uint</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeUint"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Long</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeLong"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>タグプロパティーでの不整値　Ulong</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.underRangeUlong"></vue-integer-input>*@
+            </span>
+        </div>
+
+        <div id="mainDiv" class="content box">
+            <label>異常系　最大値が範囲外</label><br />
+            <span style="display:inline-block">
+                <label>Sbyte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeSbyte"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Byte</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeByte"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Short</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeShort"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Ushort</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeUshort"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Int</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeInt"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Uint</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeUint"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Long</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeLong"></vue-integer-input>*@
+            </span>
+            <span style="display:inline-block">
+                <label>Ulong</label><br />
+                @*<vue-integer-input asp-for="@Model.BindData.overRangeUlong"></vue-integer-input>*@
+            </span>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Vueコンポーネントを展開させる
+    CreateVue('#components-demo');
+</script>

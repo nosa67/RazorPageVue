@@ -1,0 +1,43 @@
+﻿.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4em;
+    padding: 0;
+    margin: 0
+}
+
+.fixed-contents {
+    position: fixed;
+    top: 4em;
+    bottom: 3em;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    padding: 0;
+    margin: 0
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3em;
+    padding: 0;
+    margin: 0
+}
+
+.radio-item{
+    padding:0.5rem;
+}
+
+.selected-check-item {
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.check-item {
+    padding: 0.5rem;
+}

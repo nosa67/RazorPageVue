@@ -1,0 +1,34 @@
+﻿@page
+@model RazorPageVue.Pages.RadioButtonResultModel
+@{
+    ViewData["Title"] = "RadioButton Check Result";
+}
+@addTagHelper *,RazorPageVue
+
+<form method="post">
+    <div id="components-demo">
+        <h1 class="display-4">ラジオボタン選択結果</h1>
+
+        <div class="content box" id="normal-radio-result">
+            <label>通常のラジオボタン</label>
+            選択ID：<span>@Model.SelectedId.ToString()</span> 、選択名：<span>@Model.SelectedName</span>
+        </div>
+
+        <div class="content box" id="required-radio-result">
+            <label>入力必須のラジオボタン</label>
+            選択ID：<span>@Model.RequiredSelectedId.ToString()</span> 、選択名：<span>@Model.RequiredSelectedName</span>
+        </div>
+
+        <div class="content box" id="enum-radio-result">
+            <label>Enumのラジオボタン</label>
+            選択列挙：<span>@Model.SelectedEnumText</span>
+        </div>
+
+        <div class="content box" id="required-enum-radio-result">
+            <label>入力必須のEnumのラジオボタン</label>
+            選択列挙：<span>@Model.RequiredSelectedEnum.ToString()</span>
+        </div>
+
+        <a id="returnLink" href="~/RadioButton">戻る</a>
+    </div>
+</form>
